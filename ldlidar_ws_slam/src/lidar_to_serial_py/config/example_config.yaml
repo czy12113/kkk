@@ -1,0 +1,35 @@
+# Lidar to Serial Bridge 配置示例
+
+# 串口配置
+lidar_serial_bridge:
+  ros__parameters:
+    # 串口设备路径
+    # 常见选项：
+    #   - /dev/ttyCH343USB0 (CH343 USB 转 TTL，接飞控时常用)
+    #   - /dev/ttyS0, /dev/ttyS1  (板载串口)
+    #   - /dev/ttyUSB0 (其他 USB 转串口)
+    serial_port: "/dev/ttyCH343USB0"
+    
+    # 波特率
+    # 常用选项: 9600, 57600, 115200, 230400, 460800
+    baudrate: 115200
+    
+    # 数据发送频率 (Hz)
+    # 建议: 5-20 Hz
+    send_rate: 10.0
+    
+    # 数据格式
+    # 选项:
+    #   - directions_8: 8个方向的距离 (推荐)
+    #   - nearest: 最近障碍物的角度和距离
+    #   - full: 完整扫描数据
+    data_format: "directions_8"
+    
+    # 是否启用心跳包
+    # true: 每秒发送一次心跳包
+    # false: 不发送心跳包
+    enable_heartbeat: true
+    
+    # 最大有效距离 (米)
+    # 超过此距离的数据将被忽略
+    max_distance: 12.0

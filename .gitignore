@@ -1,0 +1,14 @@
+.cache/
+.codex/
+.copilot/
+.vscode/
+.vscode-server/
+.ros/
+.rviz2/
+build/
+log/
+logs/
+*.log
+*.db
+*.db-shm
+*.db-wal
